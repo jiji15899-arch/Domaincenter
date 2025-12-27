@@ -3,9 +3,9 @@
 // ============================================
 
 // 설정 (환경 변수로 설정할 값들)
-const CLOUDFLARE_API_TOKEN = 'YOUR_CLOUDFLARE_API_TOKEN'; // Cloudflare API Token
-const CLOUDFLARE_ZONE_ID = 'YOUR_ZONE_ID'; // 도메인의 Zone ID
-const BASE_DOMAIN = 'yourdomain.com'; // 당신의 기본 도메인
+const CLOUDFLARE_API_TOKEN = 'WVVIKvk-9Dz2CioeacS8O6CxBNTCkEzECgiWVu_p'; // Cloudflare API Token
+const CLOUDFLARE_ZONE_ID = 'd5c67a7f0c791d39dbce41c3aa5d2221'; // 도메인의 Zone ID
+const BASE_DOMAIN ='jiwungum.dpdns.org'; // 당신의 기본 도메인
 
 // CORS 헤더
 const corsHeaders = {
