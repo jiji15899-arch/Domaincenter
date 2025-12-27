@@ -20,7 +20,6 @@ header {
     text-align: center;
     color: white;
     margin-bottom: 40px;
-    padding: 40px 20px;
 }
 
 header h1 {
@@ -33,25 +32,29 @@ header p {
     opacity: 0.9;
 }
 
-main {
+.card {
     background: white;
-    border-radius: 16px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
-.form-container {
-    padding: 40px;
-}
-
-.form-container h2 {
+.card h2 {
     color: #333;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-size: 1.8em;
 }
 
+.card h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    font-size: 1.3em;
+}
+
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
@@ -61,26 +64,25 @@ main {
     font-weight: 600;
 }
 
-.form-group input,
-.form-group textarea {
+.form-group input {
     width: 100%;
-    padding: 12px 16px;
+    padding: 12px 15px;
     border: 2px solid #e0e0e0;
     border-radius: 8px;
     font-size: 16px;
-    transition: border-color 0.3s;
+    transition: all 0.3s;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.form-group input:focus {
     outline: none;
     border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .domain-input-group {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
 }
 
 .domain-input-group input {
@@ -90,100 +92,117 @@ main {
 .domain-extension {
     font-weight: 600;
     color: #667eea;
-    font-size: 1.1em;
+    font-size: 16px;
     white-space: nowrap;
 }
 
 .form-group small {
     display: block;
-    margin-top: 6px;
+    margin-top: 5px;
     color: #888;
-    font-size: 0.9em;
+    font-size: 13px;
 }
 
-.form-group input + input {
+.btn {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-right: 10px;
     margin-top: 10px;
 }
 
-.btn-submit {
-    width: 100%;
-    padding: 16px;
+.btn-primary {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.btn-submit:hover {
+.btn-primary:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
 }
 
-.btn-submit:active {
-    transform: translateY(0);
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
-.result {
-    margin-top: 30px;
-    padding: 20px;
+.btn-secondary {
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.btn-secondary:hover {
+    background: #667eea;
+    color: white;
+}
+
+.status {
+    margin-top: 20px;
+    padding: 15px;
     border-radius: 8px;
-    font-size: 1em;
-}
-
-.result.hidden {
     display: none;
+    animation: slideIn 0.3s;
 }
 
-.result.success {
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.status.show {
+    display: block;
+}
+
+.status.success {
     background: #d4edda;
     color: #155724;
     border: 1px solid #c3e6cb;
 }
 
-.result.error {
+.status.error {
     background: #f8d7da;
     color: #721c24;
     border: 1px solid #f5c6cb;
 }
 
-.info-section {
-    background: #f8f9fa;
-    padding: 40px;
-    border-top: 1px solid #e0e0e0;
+.status.info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
 }
 
-.info-section h3 {
-    color: #333;
-    margin-bottom: 15px;
-    font-size: 1.3em;
+.status.warning {
+    background: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
 }
 
-.info-section ul {
-    list-style-position: inside;
+.info-card ol, .info-card ul {
+    margin-left: 20px;
+}
+
+.info-card li {
+    margin-bottom: 10px;
+    line-height: 1.6;
     color: #555;
-    line-height: 1.8;
-}
-
-.info-section p {
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 20px;
 }
 
 footer {
     text-align: center;
     color: white;
-    padding: 30px 20px;
-    margin-top: 20px;
-}
-
-footer a {
-    color: white;
-    text-decoration: underline;
+    margin-top: 40px;
+    opacity: 0.9;
 }
 
 @media (max-width: 600px) {
@@ -191,13 +210,12 @@ footer a {
         font-size: 2em;
     }
     
-    .form-container,
-    .info-section {
-        padding: 25px;
+    .card {
+        padding: 20px;
     }
     
-    .domain-input-group {
-        flex-direction: column;
-        align-items: stretch;
+    .btn {
+        width: 100%;
+        margin-right: 0;
     }
 }
