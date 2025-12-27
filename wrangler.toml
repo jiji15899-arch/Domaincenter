@@ -1,15 +1,17 @@
-# Cloudflare Pages 배포 설정
-# 제작: 아백 (아로스)
-# 생성일: 2025-12-27
-
 name = "domaincenter"
-compatibility_date = "2025-12-27"
+main = "worker.js"
+compatibility_date = "2024-01-01"
 
-[assets]
-directory = "."
-html_handling = "auto-trailing-slash"
+# Workers 환경 변수 (민감한 정보는 wrangler secret 명령어로 설정)
+[vars]
+BASE_DOMAIN = "jiwungum.dpdns.org"
 
-# 404 페이지 설정
-[[assets.fallback_routes]]
-pattern = "/*"
-destination = "/index.html"
+# KV 네임스페이스 (선택사항 - 도메인 정보 저장용)
+# [[kv_namespaces]]
+# binding = "DOMAINS"
+# id = "your_kv_namespace_id"
+
+# 라우트 설정 (필요시)
+# routes = [
+#   { pattern = "api.yourdomain.com/*", zone_name = "yourdomain.com" }
+# ]
